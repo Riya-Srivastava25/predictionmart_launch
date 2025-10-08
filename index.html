@@ -1,86 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PredictionMart | Bet on Tomorrow. Today.</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>PredictionMart</h1>
-    <p>Bet on Tomorrow. Today.</p>
-    <p>Asia’s first platform to profit from accurate predictions in tech, trade, and geopolitics.</p>
-  </header>
+<!-- index.html -->
+<li><strong>Policy & Strategy Professionals:</strong> Betting on insights into geopolitics, tech, and trade.</li>
+</ul>
+</section>
 
-  <section id="mission">
-    <h2>Our Mission</h2>
-    <p>To make forecasting accessible, transparent, and profitable through collective intelligence. We empower users to trade on what they believe will shape the future — and get rewarded for being right.</p>
-  </section>
+<section>
+<h2>📊 What is a Prediction Market?</h2>
+<p>A prediction market is a financial platform where users buy or sell contracts based on the outcomes of real-world events. Each share's price represents the market's collective belief in that event's probability.</p>
+<p><strong>Price = Probability:</strong> If a share trades at $0.75, the market estimates a 75% chance the event will occur. If the event happens, the share pays out $1; otherwise, $0.</p>
+</section>
 
-  <section id="personas">
-    <h2>Who is PredictionMart for?</h2>
-    <ul>
-      <li><strong>Retail Investors:</strong> Seeking new, data-driven ways to diversify their portfolio.</li>
-      <li><strong>Students & Academics:</strong> Testing their understanding of global events and probabilities.</li>
-      <li><strong>Professionals & Analysts:</strong> Using informed predictions to profit from insight and expertise.</li>
-    </ul>
-  </section>
+<section>
+<h2>⚙️ How It Works</h2>
+<ol>
+<li><strong>Step 1:</strong> Sign up and verify your identity.</li>
+<li><strong>Step 2:</strong> Deposit funds via UPI, crypto, or card.</li>
+<li><strong>Step 3:</strong> Pick an event (e.g., “Will India ban TikTok in 2025?”)</li>
+<li><strong>Step 4:</strong> Buy “Yes” or “No” shares depending on your belief.</li>
+<li><strong>Step 5:</strong> Wait for the outcome. If you're right, you earn ₹1/share.</li>
+</ol>
+</section>
 
-  <section id="definition">
-    <h2>What is a Prediction Market?</h2>
-    <p>A prediction market is a financial exchange where users buy and sell shares of future events. Each share’s price reflects the market’s collective belief in that outcome’s probability.</p>
-    <p>For example, if the event “Will SpaceX land Starship on Mars by 2030?” trades at $0.22, the market estimates a 22% chance of success.</p>
-  </section>
+<section>
+<h2>📈 Detailed Example Transactions</h2>
+<div class="example">
+<h3>Example 1: Kamala Harris wins 2024 US Election</h3>
+<p>Market price: $0.48 (48% chance)<br>
+You buy 200 “Yes” shares for $96.<br>
+If she wins → Payout = $200 → <strong>Profit = $104</strong><br>
+If she loses → Payout = $0 → <strong>Loss = $96</strong></p>
+</div>
 
-  <section id="how">
-    <h2>How It Works</h2>
-    <ol>
-      <li><strong>Define an Event:</strong> e.g., “Will India’s GDP grow above 6% in 2025?”</li>
-      <li><strong>Buy or Sell Shares:</strong> “Yes” shares pay ₹1 if true, ₹0 if not.</li>
-      <li><strong>Interpret Prices:</strong> ₹0.70 means a 70% chance of occurring.</li>
-      <li><strong>Track & Trade:</strong> Market prices shift as new information emerges.</li>
-      <li><strong>Settle:</strong> When the event resolves, correct predictions pay out ₹1 per share.</li>
-    </ol>
-  </section>
+<div class="example">
+<h3>Example 2: Apple launches AI iPhone by June 2025</h3>
+<p>Buy 100 “Yes” shares at $0.62 = $62<br>
+If true → Get $100 → <strong>Profit = $38</strong><br>
+If false → Get $0 → <strong>Loss = $62</strong></p>
+</div>
+</section>
 
-  <section id="examples">
-    <h2>Example Trades</h2>
-    <p><strong>Example 1:</strong> “India will win the 2026 T20 World Cup.” Price ₹0.35. You buy 100 shares for ₹35.  
-    If true → Earn ₹100. Profit ₹65.</p>
+<section>
+<h2>💰 Payoff Calculator (Custom Widget)</h2>
+<div class="widget">
+<input type="number" id="price" placeholder="Price per share (e.g. 0.45)" step="0.01" />
+<input type="number" id="shares" placeholder="Number of shares (e.g. 200)" />
+<button onclick="calculatePayoff()">Calculate Payoff</button>
+<p id="payoffResult"></p>
+</div>
+</section>
 
-    <p><strong>Example 2:</strong> “Bitcoin will cross $100K by Dec 2025.” Price ₹0.45. You buy 200 shares for ₹90.  
-    If true → Earn ₹200. Profit ₹110.</p>
-  </section>
+<section>
+<h2>📊 Market Simulator (Custom Widget)</h2>
+<canvas id="marketChart" height="150"></canvas>
+<button onclick="addData()">Simulate New Price</button>
+</section>
 
-  <section id="calculator">
-    <h2>Payoff Calculator</h2>
-    <p>Enter the price per share and number of shares to estimate your potential earnings.</p>
-    <form>
-      <label for="price">Price per Share (₹):</label>
-      <input type="number" id="price" step="0.01" placeholder="e.g., 0.45"><br/>
-      <label for="shares">Number of Shares:</label>
-      <input type="number" id="shares" placeholder="e.g., 200"><br/>
-      <button type="button" onclick="calculatePayoff()">Calculate</button>
-    </form>
-    <p id="result"></p>
-  </section>
+<section>
+<h2>🎥 What is a Prediction Market? (YouTube Embed)</h2>
+<div class="video-container">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/JKtRrv9d9w8" title="What is a Prediction Market" frameborder="0" allowfullscreen></iframe>
+</div>
+</section>
 
-  <section id="video">
-    <h2> Learn More About Prediction Markets</h2>
-    <iframe width="560" height="315" 
-      src="https://www.youtube.com/embed/JKtRrv9d9w8" 
-      title="What is a Prediction Market?" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 PredictionMart | Launching from Dubai & Singapore | Serving East and West Asia.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>
+<p>&copy; 2025 PredictionMart | Built by the founding team | Dubai & Singapore Launch</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
+
 
