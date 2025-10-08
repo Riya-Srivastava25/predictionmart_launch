@@ -13,33 +13,13 @@ function calculatePayoff() {
   document.getElementById("payoffResult").innerText = `If correct: Profit = $${profit.toFixed(2)}, Total Payout = $${payout}`;
 }
 
-// MARKET SIMULATOR CHART
-const ctx = document.getElementById('marketChart').getContext('2d');
-let labels = [1];
-let data = [0.50];  // start with 50%
+  let currentPrice = 50.0;
 
-const chart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: labels,
-    datasets: [{
-      label: 'Market Price (Probability)',
-      data: data,
-      borderColor: '#4b79a1',
-      tension: 0.3,
-      fill: false
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        min: 0,
-        max: 1
-      }
-    }
+  function simulatePrice() {
+    const change = (Math.random() * 10 - 5).toFixed(2); // Random between -5 and +5
+    currentPrice = Math.max(0, (parseFloat(currentPrice) + parseFloat(change))).toFixed(2); // Ensure >= 0
+    document.getElementById("priceDisplay").innerText = "Current Price: $" + currentPrice;
   }
-});
 
 function addData() {
   const nextIndex = chart.data.labels.length + 1;
