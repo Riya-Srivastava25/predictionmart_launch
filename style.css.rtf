@@ -1,38 +1,83 @@
 body {
-font-family: 'Inter', sans-serif;
-background: #f9fafc;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(to right, #fdfbfb, #ebedee);
 color: #222;
 margin: 0;
 padding: 0;
 }
+
+/* Header Styling */
 header {
-background: linear-gradient(120deg, #003366, #0077b6);
+background: linear-gradient(135deg, #003366, #005f8a);
 color: white;
-text-align: center;
 padding: 3rem 1rem;
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+header h1 {
+font-size: 2.8rem;
+margin-bottom: 0.5rem;
+}
+
+header p {
+font-size: 1.1rem;
+margin: 0.2rem 0;
+}
+
+/* Section Cards */
 section {
 background: white;
 max-width: 900px;
 margin: 2rem auto;
-padding: 2rem;
-border-radius: 10px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+padding: 2.5rem;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+transition: all 0.3s ease;
 }
-h2 { color: #003366; border-left: 5px solid #0077b6; padding-left: 10px; }
+
+section:hover {
+transform: translateY(-3px);
+}
+
+h2 {
+color: #003366;
+border-left: 6px solid #0077b6;
+padding-left: 12px;
+margin-bottom: 1rem;
+}
+
+ul, ol {
+margin-left: 1.5rem;
+line-height: 1.8;
+}
+
+p, li {
+font-size: 1rem;
+}
+
+strong {
+color: #000;
+}
+
+input, button {
+display: block;
+width: 100%;
+margin-top: 1rem;
+padding: 0.75rem;
+font-size: 1rem;
+border-radius: 8px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
 button {
 background: #0077b6;
 color: white;
 border: none;
-padding: 10px 15px;
-border-radius: 6px;
+font-weight: bold;
 cursor: pointer;
+transition: background 0.2s ease;
 }
-button:hover { background: #005b8a; }
-footer {
-background: #002244;
-color: white;
-text-align: center;
-padding: 1rem;
 }
 
