@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /**\
+ * Custom-Built Widget: Payoff Calculator\
+ * Calculates the potential shares purchased, total payout, and profit\
+ * based on the user's input price per share and total investment.\
+ */\
+function calculatePayoff() \{\
+    // Get input values\
+    const priceInput = document.getElementById('price');\
+    const investmentInput = document.getElementById('investment');\
+\
+    // Convert inputs to numbers and validate\
+    const pricePerShare = parseFloat(priceInput.value);\
+    const totalInvestment = parseFloat(investmentInput.value);\
+\
+    // Get output elements\
+    const sharesCountElement = document.getElementById('shares-count');\
+    const payoutElement = document.getElementById('payout');\
+    const profitElement = document.getElementById('profit');\
+\
+    // Simple validation\
+    if (isNaN(pricePerShare) || pricePerShare <= 0 || pricePerShare > 1.00 || isNaN(totalInvestment) || totalInvestment <= 0) \{\
+        sharesCountElement.textContent = 'Invalid Input';\
+        payoutElement.textContent = 'Invalid Input';\
+        profitElement.textContent = 'Invalid Input';\
+        return;\
+    \}\
+\
+    // 1. Calculate Shares Purchased\
+    // Using Math.floor to ensure only whole shares are purchased (a standard market convention)\
+    const sharesPurchased = Math.floor(totalInvestment / pricePerShare);\
+\
+    // 2. Calculate Total Payout (since each share pays out $1.00 if correct)\
+    const totalPayout = sharesPurchased * 1.00;\
+\
+    // 3. Calculate Actual Cost (may be less than investment if not a whole share)\
+    const actualCost = sharesPurchased * pricePerShare;\
+\
+    // 4. Calculate Potential Profit\
+    const potentialProfit = totalPayout - actualCost;\
+\
+    // Format results to currency\
+    const formatCurrency = (amount) => `$$\{amount.toFixed(2)\}`;\
+\
+    // Update the DOM\
+    sharesCountElement.textContent = sharesPurchased.toLocaleString();\
+    payoutElement.textContent = formatCurrency(totalPayout);\
+    profitElement.textContent = formatCurrency(potentialProfit);\
+\}\
+\
+// Initialize the calculator on load for a clean initial display\
+document.addEventListener('DOMContentLoaded', calculatePayoff);}
